@@ -17,10 +17,6 @@ RUN wget -q ${GRADLE_URL} -O /gradle.zip && \
 ENV GRADLE_HOME=/gradle-${GRADLE_VERSION}
 ENV PATH=$PATH:$GRADLE_HOME/bin
 
-# create ec2-user
-RUN groupadd -g 500 ec2-user && useradd -u 500 -g ec2-user ec2-user
-USER ec2-user
-
 VOLUME /workspace
 WORKDIR /workspace
 
